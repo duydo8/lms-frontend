@@ -1,0 +1,65 @@
+/* ======== Màu sắc menu chính ======== */
+.menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Khi menu chính đang mở, đổi màu tím */
+.active-text {
+    color: #854FFF !important;
+}
+
+/* ======== Hiệu ứng submenu ======== */
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.submenu.show {
+    max-height: 500px;
+}
+
+/* ======== Link submenu ======== */
+.submenu-item {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover submenu */
+.submenu-item:hover {
+    background-color: #f8f9fa;
+    text-decoration: underline;
+}
+
+/* Khi submenu được chọn, đổi màu chữ sang tím */
+.active-link {
+    color: #854FFF !important;
+    font-weight: bold;
+}
+.logo-small {
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+    display: block; /* Để margin auto hoạt động */
+    margin: auto; /* Căn giữa theo chiều ngang */
+}
+
