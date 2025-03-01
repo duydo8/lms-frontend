@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />}>
             <Route index element={<MainConTent />} />
+            <Route path="lession-list" element={<LessionList />} />
           </Route>
         </Routes>
       </BrowserRouter>
