@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    font-weight: bold;
-    font-size: 16px;
+    /* font-weight: bold; */
+    /* font-size: 16px; */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -17,6 +17,7 @@
 /* Khi menu chính đang mở, đổi màu tím */
 .active-text {
     color: #854FFF !important;
+    font-weight: bold;
 }
 
 /* ======== Hiệu ứng submenu ======== */
@@ -54,6 +55,7 @@
     color: #854FFF !important;
     font-weight: bold;
 }
+
 .logo-small {
     background-color: white;
     width: 50%;
@@ -62,4 +64,3 @@
     display: block; /* Để margin auto hoạt động */
     margin: auto; /* Căn giữa theo chiều ngang */
 }
-
