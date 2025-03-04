@@ -6,7 +6,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Dashboard from './components/trang-chu/DashBoard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainConTent from './components/trang-chu/MainConTent';
-import LessionList from "./components/buoi-hoc/LessionList";
+import Classes from './components/lop-hoc/Classes';
+import Subjects from './components/mon-hoc/Subjects';
+import Teachers from './components/giao-vien/Teacher';
 
 
 function App() {
@@ -16,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />}>
             <Route index element={<MainConTent />} />
-            <Route path="lession-list" element={<LessionList />} />
-
+            <Route path="classes" element={<Classes />} />
+            <Route path="subjects" element={<Subjects />} />
+            <Route path="teachers" element={<Teachers />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,66 +1,152 @@
-/* ======== Màu sắc menu chính ======== */
+.sidebar {
+    width: 300px;
+    background: #f8f9fa;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-link {
+    display: inline-block;
+    padding: 10px;
+}
+
+.logo-small {
+    width: 80%;
+    object-fit: contain;
+}
+
+/* Menu chính */
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
 .menu-item {
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
-    /* font-weight: bold; */
-    /* font-size: 16px; */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    align-items: center;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .menu-item:hover {
+    background-color: #f0f4ff;
+}
+
+.active-menu {
+    background-color: #e9ecff;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    transition: height 0.3s ease-in-out;
+}
+
+.submenu-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    /* background: #f0f0f0; */
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.submenu-title:hover {
+    background: #dcdcdc;
+}
+
+/* Link submenu */
+.submenu-list {
+    padding-left: 15px;
+}
+
+.submenu-item {
+    display: block;
+    font-size: 14px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background 0.3s;
+    background-color: #f0f0f0;
+}
+
+.submenu-item:hover {
     background-color: #f8f9fa;
 }
 
-/* Khi menu chính đang mở, đổi màu tím */
 .active-text {
     color: #854FFF !important;
     font-weight: bold;
 }
 
-/* ======== Hiệu ứng submenu ======== */
-.submenu {
-    list-style: none;
-    padding-left: 20px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.submenu.show {
-    max-height: 500px;
-}
-
-/* ======== Link submenu ======== */
-.submenu-item {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-/* Hover submenu */
-.submenu-item:hover {
-    background-color: #f8f9fa;
-    text-decoration: underline;
-}
-
-/* Khi submenu được chọn, đổi màu chữ sang tím */
 .active-link {
     color: #854FFF !important;
     font-weight: bold;
 }
 
-.logo-small {
-    background-color: white;
-    width: 50%;
-    height: 50%;
-    object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
-    display: block; /* Để margin auto hoạt động */
-    margin: auto; /* Căn giữa theo chiều ngang */
+/* Icon mũi tên */
+.arrow {
+    transition: transform 0.3s;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.submenu-list {
+    list-style: none;
+    /* Xóa dấu chấm */
+    padding-left: 20px;
+    /* Lùi vào trong */
+    margin-left: 10px
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Cột bên phải chứa nội dung */
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Phần nội dung chính có thể cuộn nhưng footer vẫn cố định */
+.main-content {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Footer luôn ở dưới cùng */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+}
+
+.submenu ul {
+    list-style: none;  /* Loại bỏ dấu chấm • */
+    padding-left: 0;   /* Loại bỏ khoảng thụt vào */
 }
