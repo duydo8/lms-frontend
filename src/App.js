@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Dashboard from './components/trang-chu/DashBoard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainConTent from './components/trang-chu/MainConTent';
+import LessionList from "./components/buoi-hoc/LessionList";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Dashboard />}>
             <Route index element={<MainConTent />} />
             <Route path="lession-list" element={<LessionList />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

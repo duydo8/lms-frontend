@@ -1,94 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaSearch, FaEye, FaPlus } from "react-icons/fa";
-import "../../assets/trang-chu.css";
 
 const MainConTent = () => {
-    return (
-        <div className="w-100">
-            <main className="p-4 overflow-auto" style={{ backgroundColor: "#F5F6FA", minHeight: "100vh" }}>
-                <h4 className="nk-block-title page-title">
-                    Welcome to LMS <b style={{ color: "#E76F51" }}></b>
-                </h4>
+  const cards = [
+    { title: "Danh sách lịch dạy", description: "Quản lý danh sách lịch dạy" },
+    { title: "Danh sách buổi học", description: "Quản lý danh sách buổi học" },
+    { title: "Danh sách lớp", description: "Quản lý danh sách lớp" },
+    { title: "Danh sách học viên", description: "Quản lý danh sách học viên" },
+    { title: "Danh sách điểm", description: "Quản lý danh sách điểm" }
+  ];
 
-                <form className="d-flex gap-2 my-3">
-                    <select className="form-select form-select-sm w-auto">
-                        <option>Môn học : All</option>
-                        <option>Môn học : All</option>
-                        <option>Môn học : All</option>
-                    </select>
-                    <select className="form-select form-select-sm w-auto">
-                        <option>Khối lớp : All</option>
-                        <option>Môn học : All</option>
-                        <option>Môn học : Trung Binh</option>
-                    </select>
-                    <select className="form-select form-select-sm w-auto">
-                        <option>Trình độ : All</option>
-                    </select>
-                    <button className="btn btn-primary"><FaSearch /> Search</button>
-                </form>
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleString());
 
-                <div className="table-responsive">
-                    <table className="table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Course ID</th>
-                                <th>Course</th>
-                                <th>Subject</th>
-                                <th>Grade</th>
-                                <th>Level</th>
-                                <th>Stages</th>
-                                <th>Updated At</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>154</td>
-                                <td>Toán lớp 2</td>
-                                <td>Toán</td>
-                                <td>Lớp 2</td>
-                                <td>Cơ Bản</td>
-                                <td>1</td>
-                                <td>2025-02-24 04:46:42</td>
-                                <td><button className="btn btn-info text-white"><FaEye /> Xem lịch dạy</button></td>
-                            </tr>
-                            <tr>
-                                <td>152</td>
-                                <td>Tiếng Anh lớp 3 mới</td>
-                                <td>Tiếng Anh</td>
-                                <td>Lớp 3</td>
-                                <td>Cơ Bản</td>
-                                <td>5</td>
-                                <td>2025-02-20 01:54:32</td>
-                                <td><button className="btn btn-info text-white"><FaEye /> Xem lịch dạy</button></td>
-                            </tr>
-                            <tr>
-                                <td>151</td>
-                                <td>Tiếng Anh lớp 5 - Offline</td>
-                                <td>Tiếng Anh Offline</td>
-                                <td>Lớp 5</td>
-                                <td>Cơ Bản</td>
-                                <td>0</td>
-                                <td>2025-02-24 01:59:43</td>
-                                <td><button className="btn btn-danger"><FaPlus /> Tạo lịch dạy</button></td>
-                            </tr>
-                            <tr>
-                                <td>149</td>
-                                <td>Toán lớp 5 - Trinh tạo</td>
-                                <td>Toán</td>
-                                <td>Lớp 5</td>
-                                <td>Cơ Bản</td>
-                                <td>5</td>
-                                <td>2025-02-15 08:31:09</td>
-                                <td><button className="btn btn-info text-white"><FaEye /> Xem lịch dạy</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="d-flex flex-column min-vh-100 bg-light">
+      <div className="container py-5 flex-grow-1">
+        <h1 className="fw-bold text-dark mb-4">
+          Welcome to LMS <span className="text-warning">Edupia Class</span>
+        </h1>
+        <div className="row g-4">
+          {cards.map((card, index) => (
+            <div key={index} className="col-md-6 col-lg-3">
+              <div className="card shadow-sm border-0 h-100">
+                <div className="card-body">
+                  <p className="text-muted small">Screen</p>
+                  <h5 className="card-title fw-bold">{card.title}</h5>
+                  <p className="card-text text-muted">{card.description}</p>
+                  <button className="btn btn-primary w-100 d-flex justify-content-between align-items-center">
+                    View <span>→</span>
+                  </button>
                 </div>
-            </main>
+              </div>
+            </div>
+          ))}
         </div>
-    )
-}
+      </div>
+      <footer className="mt-auto text-muted text-center border-top py-1">
+        <p>© 2023 Edupia Class. Template by DashLite</p>
+        <p>Time: {currentTime}</p>
+      </footer>
+    </div>
+  );
+};
 
-export default MainConTent
+export default MainConTent;

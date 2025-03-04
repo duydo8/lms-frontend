@@ -1,11 +1,12 @@
 import React from 'react'
+import { FaEye, FaPlus, FaSearch } from 'react-icons/fa'
 
 const LessionList = () => {
     return (
         <div className="w-100">
             <main className="p-4 overflow-auto" style={{ backgroundColor: "#F5F6FA", minHeight: "100vh" }}>
                 <h4 className="nk-block-title page-title">
-                    Welcome to LMS <b style={{ color: "#E76F51" }}></b>
+                    Quản lý buổi học <b style={{ color: "#E76F51" }}></b>
                 </h4>
 
                 <form className="d-flex gap-2 my-3">
