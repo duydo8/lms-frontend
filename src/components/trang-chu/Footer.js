@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer">
-        <p>© 2023 Edupia Class. Template by DashLite</p>
+        <p>© 2025Eduzio Class. Template by duydo8</p>
         <p>Time: {currentTime}</p>
       </footer>
     </div>

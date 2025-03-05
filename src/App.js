@@ -9,6 +9,7 @@ import MainConTent from './components/trang-chu/MainConTent';
 import Classes from './components/lop-hoc/Classes';
 import Subjects from './components/mon-hoc/Subjects';
 import Teachers from './components/giao-vien/Teacher';
+import SubjectCreate from './components/mon-hoc/SubjectCreate';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route index element={<MainConTent />} />
             <Route path="classes" element={<Classes />} />
             <Route path="subjects" element={<Subjects />} />
+            <Route path="subject-create" element={<SubjectCreate />} />
             <Route path="teachers" element={<Teachers />} />
           </Route>
         </Routes>
